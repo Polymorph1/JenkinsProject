@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,12 +41,23 @@ namespace JenkinsProject
         private void ChooseDriverInstance(BrowerType browserType)
         {
             if (browserType == BrowerType.Chrome)
-                Driver = new ChromeDriver();
+            {
+                //Driver = new ChromeDriver();
+                ChromeOptions cap = new ChromeOptions();
+                cap.AddArguments("version", "");
+                cap.AddArguments("platform", "LINUX");
+                Driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4444/wd/hub"), cap);
+            }
+
             else if (browserType == BrowerType.Firefox)
             {
                 //FirefoxDriverService service = FirefoxDriverService.CreateDefaultService(@"C:\Users\840\Desktop\drivers");
                 //service.FirefoxBinaryPath = @"C:\Program Files\Mozilla Firefox";
-                Driver = new FirefoxDriver();
+               // Driver = new FirefoxDriver();
+                FirefoxOptions cap = new FirefoxOptions();
+                cap.AddArguments("version", "");
+                cap.AddArguments("platform", "LINUX");
+                Driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4444/wd/hub"), cap);
 
             }
             else if (browserType == BrowerType.IE)
