@@ -6,6 +6,7 @@ using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,7 +47,7 @@ namespace JenkinsProject
                 ChromeOptions cap = new ChromeOptions();
                 cap.AddArguments("version", "");
                 cap.AddArguments("platform", "LINUX");
-                Driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4444/wd/hub"), cap);
+                Driver = new RemoteWebDriver(new Uri("http://localhost:4444//wd/hub"), cap);
             }
 
             else if (browserType == BrowerType.Firefox)
@@ -57,7 +58,7 @@ namespace JenkinsProject
                 FirefoxOptions cap = new FirefoxOptions();
                 cap.AddArguments("version", "");
                 cap.AddArguments("platform", "LINUX");
-                Driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4444/wd/hub"), cap);
+                Driver = new RemoteWebDriver(new Uri("http://localhost:4444//wd/hub"), cap);
 
             }
             else if (browserType == BrowerType.IE)
