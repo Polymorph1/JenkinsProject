@@ -45,8 +45,6 @@ namespace JenkinsProject
             {
                 //Driver = new ChromeDriver();
                 ChromeOptions cap = new ChromeOptions();
-                cap.AddArguments("version", "");
-                cap.AddArguments("platform", "LINUX");
                 Driver = new RemoteWebDriver(new Uri("http://localhost:4444//wd/hub"), cap);
             }
 
@@ -56,8 +54,6 @@ namespace JenkinsProject
                 //service.FirefoxBinaryPath = @"C:\Program Files\Mozilla Firefox";
                // Driver = new FirefoxDriver();
                 FirefoxOptions cap = new FirefoxOptions();
-                cap.AddArguments("version", "");
-                cap.AddArguments("platform", "LINUX");
                 Driver = new RemoteWebDriver(new Uri("http://localhost:4444//wd/hub"), cap);
 
             }
