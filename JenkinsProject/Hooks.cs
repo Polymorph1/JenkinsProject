@@ -45,7 +45,7 @@ namespace JenkinsProject
             {
                 //Driver = new ChromeDriver();
                 ChromeOptions cap = new ChromeOptions();
-                Driver = new RemoteWebDriver(new Uri("http://localhost:4444//wd/hub"), cap);
+                Driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), cap);
             }
 
             else if (browserType == BrowerType.Firefox)
@@ -54,7 +54,7 @@ namespace JenkinsProject
                 //service.FirefoxBinaryPath = @"C:\Program Files\Mozilla Firefox";
                // Driver = new FirefoxDriver();
                 FirefoxOptions cap = new FirefoxOptions();
-                Driver = new RemoteWebDriver(new Uri("http://localhost:4444//wd/hub"), cap);
+                Driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), cap);
 
             }
             else if (browserType == BrowerType.IE)
